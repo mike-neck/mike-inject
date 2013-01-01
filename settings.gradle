@@ -1,2 +1,2 @@
-include 'guice', 'kouinject'
+include 'guice', 'kouinject', 'mike'
 

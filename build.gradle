@@ -6,3 +6,15 @@ version = '0.1'
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
 
+idea.project.ipr {
+    withXml { provider ->
+        def map = provider.node.component.find { it.@name == 'VcsDirectoryMappings' }.mapping
+        map.@vcs = 'Git'
+        map.@directory = project.properties.projectDir
+
+    }
+}
+
+task wrapper (type : Wrapper) {
+    gradleVersion = 1.0
+}
